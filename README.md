@@ -16,6 +16,10 @@ To install Goserve, run:
 ```
 go install github.com/vshalt/goserve@latest`
 ```
+Or build the binary with:
+```
+make build
+```
 Make sure that $GOPATH/bin is in your PATH to run the goserve command.
 
 ## Usage
