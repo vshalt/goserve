@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/vshalt/goserve/internal/config"
+	"github.com/vshalt/goserve/internal/middleware"
 )
 
 type HttpServer interface {
@@ -23,9 +24,12 @@ func GetHttpServer(addr string, handler http.Handler) HttpServer {
 	}
 }
 
-func Server(log *log.Logger, opt config.Flags) error {
+func Server(logger *log.Logger, opt config.Flags) error {
 	fs := NewFileServer(Options{Directory: opt.Directory})
 
+	fs.Use(
+		middleware.Logger(logger, opt),
+	)
 	addr := net.JoinHostPort(opt.Host, opt.Port)
 	server := GetHttpServer(addr, fs)
 
