@@ -58,5 +58,14 @@ goserve -dir /path/to/directory -s -c /path/to/cert.pem -k /path/to/key.pem
 goserve -d /path/to/directory -h 0.0.0.0 -p 3000
 ```
 
+## Creating a Self-Signed SSL Certificate
+
+To create a self-signed SSL certificate and key for testing, you can use the following command:
+
+```
+openssl req -new -x509 -days 365 -nodes -out cert.pem -keyout key.pem
+```
+This command will prompt you for some information to include in the certificate.
+
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
