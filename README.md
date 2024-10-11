@@ -28,6 +28,7 @@ goserve [OPTIONS]
 
 Command-Line Arguments
 
+```
 --dir (default: current working directory): The directory to serve files from.
 --host (default: "127.0.0.1"): The host to bind the server to.
 --port (default: 3333): The port to serve on.
@@ -35,6 +36,7 @@ Command-Line Arguments
 --cert (required if SSL is enabled): Path to the SSL certificate file.
 --key (required if SSL is enabled): Path to the SSL key file.
 --verbose (default: false): Enable verbose logging for debugging.
+```
 
 ## Example
 - Serve files from the current directory on localhost at port 3333:
